@@ -27,3 +27,8 @@ app.get("/api/contacts", async (request, response) => {
         console.log(`Listening on http://localhost:${port}`);
     }); 
   }
+
+// Export the app as a serverless function
+module.exports = (req, res) => {
+    return app(req, res);
+};
