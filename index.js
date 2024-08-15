@@ -12,12 +12,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-app.get("/contacts", async (request, response) => {
+app.get("/api/contacts", async (request, response) => {
     let contact = await db.getContacts();
     response.json(contact)
   });
   
-  app.get("/skills", async (request, response) => {
+  app.get("/api/skills", async (request, response) => {
     let skills = await db.getSkills();
     response.json(skills)
   });
