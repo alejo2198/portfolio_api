@@ -22,6 +22,6 @@ app.get("/contacts", async (request, response) => {
     response.json(skills)
   });
 
-  app.listen(port, () => {
-    console.log(`Listening on http://localhost:${port}`);
-  }); 
+app.listen(port, () => {
+console.log(`Listening on http://localhost:${port}`);
+}); 
