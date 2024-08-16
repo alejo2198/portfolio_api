@@ -25,7 +25,9 @@ app.get("/api/contacts", async (request, response) => {
 });
   
   app.get("/api/skills", async (request, response) => {
+    console.log("got here")
     let skills = await db.getSkills();
+    console.log(skills)
     response.json(skills)
 });
 
