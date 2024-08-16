@@ -25,10 +25,14 @@ app.get("/api/contacts", async (request, response) => {
 });
   
   app.get("/api/skills", async (request, response) => {
-    console.log("got here")
-    let skills = await db.getSkills();
-    console.log(skills)
-    response.json(skills)
+    try {
+      let skills = await db.getSkills();
+      response.json(skills)
+    } catch (error) {
+      console.error("Error fetching skills:", error.message);
+      response.status(500).json({ error: "Failed to fetch skills" });
+    }
+    
 });
 
   if (process.env.NODE_ENV !== 'production') {
