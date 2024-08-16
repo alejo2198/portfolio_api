@@ -18,6 +18,24 @@ const ContactSchema = new mongoose.Schema({
 });
 const Contact = mongoose.model("contacts", ContactSchema);
 
+const ProjectSchema = new mongoose.Schema({
+  name: String,
+  isFeatured: Boolean,
+  image_path_mobile: String,
+  abbreviation: String,
+  alt_text: String,
+  link: String,
+  description: String,
+  languages: [
+    {
+      name: String,
+      icon: String
+    }
+  ]
+});
+
+const Project = mongoose.model("projects", ProjectSchema);
+
 //MONGODB FUNCTIONS
 async function connect() {
   await mongoose.connect(dbUrl); //connect to mongodb
@@ -34,8 +52,14 @@ async function getContacts() {
   await connect();
   return await Contact.find({}); //return array for find all
 }
+//Get all contacts
+async function getProjects() {
+  await connect();
+  return await Project.find({}); //return array for find all
+}
 
 module.exports = {
   getSkills,
-  getContacts
+  getContacts,
+  getProjects
 }
