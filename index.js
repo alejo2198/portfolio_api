@@ -21,8 +21,6 @@ app.use(express.json());
 
 
 app.get("/api/contacts", async (request, response) => {
-    // let contact = await db.getContacts();
-    // response.json(contact)
     try {
       let contacts = await db.getContacts();
       response.json(contacts);
@@ -41,6 +39,16 @@ app.get("/api/contacts", async (request, response) => {
       response.status(500).json({ error: "Failed to fetch skills" });
     }
     
+});
+app.get("/api/projects", async (request, response) => {
+  try {
+    let projects = await db.getProjects();
+    response.json(projects)
+  } catch (error) {
+    console.error("Error fetching projects:", error.message);
+    response.status(500).json({ error: "Failed to fetch projects" });
+  }
+  
 });
 
   if (process.env.NODE_ENV !== 'production') {
