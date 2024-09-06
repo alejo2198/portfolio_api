@@ -13,7 +13,8 @@ app.use((req, res, next) => {
   const allowedOrigins = [
     'https://portfolio-b-two.vercel.app', // Your production URL
     'http://localhost:5173',              // Your local development URL
-    'https://alejandrocastro.dev'
+    'https://alejandrocastro.dev',
+    'https://www.alejandrocastro.dev/'
   ];
 
   const origin = req.headers.origin;
