@@ -14,7 +14,7 @@ app.use((req, res, next) => {
     'https://portfolio-b-two.vercel.app', // Your production URL
     'http://localhost:5173',              // Your local development URL
     'https://alejandrocastro.dev',
-    'https://www.alejandrocastro.dev/'
+    'https://www.alejandrocastro.dev'
   ];
 
   const origin = req.headers.origin;
