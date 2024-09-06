@@ -12,7 +12,8 @@ const db = require("./database/db");
 app.use((req, res, next) => {
   const allowedOrigins = [
     'https://portfolio-b-two.vercel.app', // Your production URL
-    'http://localhost:5173'              // Your local development URL
+    'http://localhost:5173',              // Your local development URL
+    'https://alejandrocastro.dev'
   ];
 
   const origin = req.headers.origin;
